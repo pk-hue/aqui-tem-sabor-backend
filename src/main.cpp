@@ -91,7 +91,9 @@ int main() {
         return res;
     });
 
-    uint16_t port = std::getenv("PORT") ? std::stoi(std::getenv("PORT")) : 8080;
+    const char* portStr = std::getenv("PORT");
+    int port = portStr ? std::stoi(portStr) : 18080;
+
     app.port(port).multithreaded().run();
     return 0;
 };
