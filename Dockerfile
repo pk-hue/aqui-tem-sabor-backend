@@ -1,5 +1,4 @@
-# Etapa 1: Builder
-FROM gcc:14 as builder
+FROM gcc:14
 
 # Instala dependências
 RUN apt-get update && \
@@ -32,17 +31,8 @@ COPY . .
 RUN cmake -Bbuild -S. -DCMAKE_TOOLCHAIN_FILE=$CMAKE_TOOLCHAIN_FILE && \
     cmake --build build
 
-# Etapa 2: Runtime
-FROM debian:bookworm-slim
-
-# Instala dependência de SSL
-RUN apt-get update && apt-get install -y libssl3 && rm -rf /var/lib/apt/lists/*
-
-WORKDIR /app
-
-COPY --from=builder /app/build/aqui_tem_sabor /app/
-COPY config ./config
-
 EXPOSE 8080
+
+WORKDIR /app/build
 
 CMD ["./aqui_tem_sabor"]
