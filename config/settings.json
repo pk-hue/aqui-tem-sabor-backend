@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "nome": "Feijoada",
+    "descricao": "Nossa tradicional feijoada com carnes selecionadas, acompanha arroz, couve, farofa e laranja.",
+    "preco": 45.90
+  },
+  {
+    "id": 2,
+    "nome": "Lasanha",
+    "descricao": "Lasanha caseira com molho à bolonhesa e muito queijo.",
+    "preco": 32.50
+  }
+]
