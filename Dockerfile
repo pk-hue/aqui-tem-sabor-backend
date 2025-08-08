@@ -1,48 +1,41 @@
-# Etapa 1: Builder
-FROM gcc:14 as builder
+# Etapa de build
+FROM gcc:13 AS builder
+
+WORKDIR /app
 
 # Instala dependências
-RUN apt-get update && \
-    apt-get install -y curl zip unzip tar git libssl-dev build-essential pkg-config
+RUN apt-get update && apt-get install -y git cmake ninja-build zip unzip curl
 
-# Instala CMake 3.31.2 manualmente
-WORKDIR /tmp
-RUN curl -LO https://github.com/Kitware/CMake/releases/download/v3.31.2/cmake-3.31.2-linux-x86_64.sh && \
-    chmod +x cmake-3.31.2-linux-x86_64.sh && \
-    ./cmake-3.31.2-linux-x86_64.sh --skip-license --prefix=/usr/local
-
-# Clona e instala o vcpkg
-WORKDIR /opt
+# Instala o vcpkg
 RUN git clone https://github.com/microsoft/vcpkg.git
-WORKDIR /opt/vcpkg
-RUN ./bootstrap-vcpkg.sh
+RUN ./vcpkg/bootstrap-vcpkg.sh
 
-# Instala bibliotecas com vcpkg
-RUN ./vcpkg install crow nlohmann-json
-
-# Define variáveis de ambiente
-ENV VCPKG_ROOT=/opt/vcpkg
-ENV CMAKE_TOOLCHAIN_FILE=/opt/vcpkg/scripts/buildsystems/vcpkg.cmake
-
-# Copia projeto
-WORKDIR /app
+# Copia o projeto
 COPY . .
 
-# Compila projeto
-RUN cmake -Bbuild -S. -DCMAKE_TOOLCHAIN_FILE=$CMAKE_TOOLCHAIN_FILE && \
-    cmake --build build
+# Instala as libs
+RUN ./vcpkg/vcpkg install crow nlohmann-json
 
-# Etapa 2: Runtime
-FROM debian:bookworm-slim
+# Compila o projeto
+RUN cmake -Bbuild -S. -DCMAKE_TOOLCHAIN_FILE=/app/vcpkg/scripts/buildsystems/vcpkg.cmake -DCMAKE_BUILD_TYPE=Release \
+ && cmake --build build --config Release
 
-# Instala dependência de SSL
-RUN apt-get update && apt-get install -y libssl3 && rm -rf /var/lib/apt/lists/*
+# Etapa final (imagem enxuta com só o executável e settings.json)
+FROM debian:bullseye-slim
 
 WORKDIR /app
 
-COPY --from=builder /app/build/aqui_tem_sabor /app/
-COPY config/settings.json /app/config/settings.json
+# Instala dependências mínimas para rodar o binário
+RUN apt-get update && apt-get install -y libstdc++6 ca-certificates && apt-get clean
 
+# Copia binário compilado
+COPY --from=builder /app/build/aqui_tem_sabor ./aqui_tem_sabor
+
+# Copia config
+COPY config ./config
+
+# Expõe porta (se necessário)
 EXPOSE 18080
 
+# Comando de execução
 CMD ["./aqui_tem_sabor"]
