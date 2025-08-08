@@ -1,9 +1,9 @@
 # Etapa 1: Builder
 FROM gcc:14 as builder
 
-# Instala dependências necessárias
+# Instala dependências necessárias para compilar e rodar o vcpkg
 RUN apt-get update && \
-    apt-get install -y cmake git libssl-dev
+    apt-get install -y cmake git libssl-dev curl zip unzip tar
 
 # Instala o vcpkg
 RUN git clone https://github.com/microsoft/vcpkg.git && \
