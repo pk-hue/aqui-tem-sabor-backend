@@ -1,19 +1,14 @@
-FROM ubuntu:20.04
+FROM alpine:latest
 
-RUN apt-get update && apt-get install -y \
-    g++ \
-    cmake \
-    make \
-    libboost-all-dev \
-    git \
-    curl \
-    libssl-dev \
-    ca-certificates
+RUN apk add --no-cache g++ cmake make git openssl-dev
 
 WORKDIR /app
 
 COPY . .
 
-RUN cmake . && make
+RUN cmake -Bbuild -H. && cmake --build build
 
-CMD ["./aqui-tem-sabor"]
+EXPOSE 18080
+
+CMD ["./build/seu-executavel"]
+
