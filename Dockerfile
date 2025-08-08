@@ -43,6 +43,6 @@ WORKDIR /app
 COPY --from=builder /app/build/aqui_tem_sabor /app/
 COPY config ./config
 
-EXPOSE 18080
+EXPOSE 8080
 
 CMD ["./aqui_tem_sabor"]

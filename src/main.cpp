@@ -91,7 +91,7 @@ int main() {
         return res;
     });
 
-    int port = std::stoi(std::getenv("PORT") ? std::getenv("PORT") : "18080");
+    int port = std::stoi(std::getenv("PORT") ? std::getenv("PORT") : "8080");
     app.port(port).run();
     return 0;
 };
