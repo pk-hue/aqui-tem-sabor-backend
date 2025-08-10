@@ -1,14 +1,123 @@
 [
   {
     "id": 1,
-    "nome": "Feijoada",
-    "descricao": "Nossa tradicional feijoada com carnes selecionadas, acompanha arroz, couve, farofa e laranja.",
-    "preco": 45.90
+    "nome": "Bife à Milanesa",
+    "descricao": "Carne macia, empanada e frita até ficar dourada e crocante."
   },
   {
     "id": 2,
-    "nome": "Lasanha",
-    "descricao": "Lasanha caseira com molho à bolonhesa e muito queijo.",
-    "preco": 32.50
+    "nome": "Filé de Frango com Legumes Grelhados",
+    "descricao": "Frango suculento acompanhado de legumes frescos e levemente grelhados."
+  },
+  {
+    "id": 3,
+    "nome": "Filé de Frango à Milanesa",
+    "descricao": "Frango empanado, crocante por fora e macio por dentro."
+  },
+  {
+    "id": 4,
+    "nome": "Frango Grelhado",
+    "descricao": "Peito de frango grelhado no ponto certo, leve e saboroso."
+  },
+  {
+    "id": 5,
+    "nome": "Frango à Parmegiana",
+    "descricao": "Filé de frango empanado, coberto com molho de tomate e queijo derretido."
+  },
+  {
+    "id": 6,
+    "nome": "Arroz Biro-Biro",
+    "descricao": "Arroz soltinho com ovos, batata palha e temperos especiais."
+  },
+  {
+    "id": 7,
+    "nome": "Omelete",
+    "descricao": "Preparada com ovos frescos e temperos caseiros, leve e nutritiva."
+  },
+  {
+    "id": 8,
+    "nome": "Churrasco Grelhado",
+    "descricao": "Carne selecionada, grelhada com sabor irresistível."
+  },
+  {
+    "id": 9,
+    "nome": "Baião de Dois",
+    "descricao": "Arroz, feijão verde, queijo e temperos típicos do Nordeste."
+  },
+  {
+    "id": 10,
+    "nome": "Parmegiana de Carne",
+    "descricao": "Bife empanado com molho de tomate e queijo gratinado."
+  },
+  {
+    "id": 11,
+    "nome": "Estrogonofe de Frango",
+    "descricao": "Frango em cubos com molho cremoso e temperos suaves."
+  },
+  {
+    "id": 12,
+    "nome": "Carne de Sol com Mandioca Frita",
+    "descricao": "Carne de sol saborosa acompanhada de mandioca crocante."
+  },
+  {
+    "id": 13,
+    "nome": "Porção de Mandioca com Carne de Sol",
+    "descricao": "Combinação perfeita de mandioca frita e carne de sol bem temperada."
+  },
+  {
+    "id": 14,
+    "nome": "Pastel de Pizza",
+    "descricao": "Recheio cremoso de queijo, tomate e orégano."
+  },
+  {
+    "id": 15,
+    "nome": "Pastel de Calabresa",
+    "descricao": "Calabresa moída e bem temperada."
+  },
+  {
+    "id": 16,
+    "nome": "Pastel de Frango",
+    "descricao": "Frango desfiado e temperado no ponto certo."
+  },
+  {
+    "id": 17,
+    "nome": "Pastel de Carne",
+    "descricao": "Carne moída suculenta e bem temperada."
+  },
+  {
+    "id": 18,
+    "nome": "Pastel de Bauru",
+    "descricao": "Presunto, queijo e tomate no recheio clássico."
+  },
+  {
+    "id": 19,
+    "nome": "Pastel de Carne com Queijo",
+    "descricao": "Mistura deliciosa de carne moída e queijo derretido."
+  },
+  {
+    "id": 20,
+    "nome": "Pastel de Calabresa com Queijo",
+    "descricao": "Calabresa e queijo derretendo a cada mordida."
+  },
+  {
+    "id": 21,
+    "nome": "Pastel de Frango com Catupiry",
+    "descricao": "Frango desfiado com catupiry cremoso."
+  },
+  {
+    "id": 22,
+    "nome": "Pastel de Frango com Queijo",
+    "descricao": "Frango temperado com queijo derretido."
+  },
+  {
+    "id": 23,
+    "nome": "Pastel de Carne com Catupiry",
+    "descricao": "Carne moída com o toque cremoso do catupiry."
+  },
+  {
+    "id": 24,
+    "nome": "Pastel de Calabresa com Catupiry",
+    "descricao": "Calabresa saborosa combinada com catupiry."
   }
 ]
+
