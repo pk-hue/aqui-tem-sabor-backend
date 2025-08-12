@@ -142,5 +142,59 @@
     "nome": "Pastel de Calabresa com Catupiry",
     "descricao": "Calabresa saborosa combinada com catupiry.",
     "preco": 12.00
+  },
+  {
+    "id": 25,
+    "nome": "Coca-cola 200 ml",
+    "descricao": " ",
+    "preco": 3.00
+  },
+  {
+    "id": 26,
+    "nome": "Água 510 ml",
+    "descricao": " ",
+    "preco": 3.00
+  },
+  {
+    "id": 27,
+    "nome": "Dolly guaraná 350 ml",
+    "descricao": " ",
+    "preco": 4.00
+  },
+  {
+    "id": 28,
+    "nome": "Coca-cola lata 350 ml",
+    "descricao": " ",
+    "preco": 6.00
+  },
+  {
+    "id": 29,
+    "nome": "Coca-cola 600 ml",
+    "descricao": " ",
+    "preco": 8.00
+  },
+  {
+    "id": 30,
+    "nome": "Coca-cola 1 litro",
+    "descricao": " ",
+    "preco": 11.00
+  },
+  {
+    "id": 31,
+    "nome": "Caldo de cana 500 ml",
+    "descricao": " ",
+    "preco": 10.00
+  },
+  {
+    "id": 32,
+    "nome": "Caldo de cana 1 litro",
+    "descricao": " ",
+    "preco": 11.00
+  },
+  {
+    "id": 33,
+    "nome": "Coca-cola 2 litros",
+    "descricao": " ",
+    "preco": 16.00
   }
 ]
